@@ -14,8 +14,6 @@ const EmployeesList = ({data, onDelete, onToggleProp}) => {
                 onToggleProp={(e) => onToggleProp(id,e.currentTarget.getAttribute('data-toggle'))}
 
             />
-            // или так
-            // <EmployeesListItem name={item.name} salary={item.salary}/>
         )
     })
 

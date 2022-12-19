@@ -40,36 +40,13 @@ class App extends Component {
 
     dleteItem = (id) => {
         this.setState(({data}) => {
-            // Удаление данных из массива в state
-            // способ 1
-            // const index = data.findIndex(elem => elem.id === id)
-            // const before = data.slice(0,index);
-            // const after = data.slice(index+1);
-            // const newArr = [...before,...after]
-            // return{
-            //     data:newArr
-            // }
-
-            // Способ 2
-            console.log('111')
             return {
                 data: data.filter(item => item.id !== id)
             }
         })
     }
 
-    onToggleProp = (id,prop) => {
-        // Вариант 1, все понятно но много кода
-        // this.setState(({data}) => {
-        //     const index = data.findIndex(elem => elem.id === id)
-        //     const old = data[index];
-        //     const newItem = {...old, increase: !old.increase};
-        //     const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)];
-        //     return {
-        //         data: newArr
-        //     }
-        // })
-
+    onToggleProp = (id, prop) => {
         this.setState(({data}) => ({
             data: data.map(item => {
                 if (item.id === id) {
@@ -79,17 +56,6 @@ class App extends Component {
             })
         }))
     }
-
-    // onToggleRise = (id) => {
-    //     this.setState(({data}) => ({
-    //         data: data.map(item => {
-    //             if (item.id === id) {
-    //                 return {...item, rise: !item.rise}
-    //             }
-    //             return item;
-    //         })
-    //     }))
-    // }
 
     render() {
         const employees = this.state.data.length
