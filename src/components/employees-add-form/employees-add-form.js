@@ -1,5 +1,6 @@
-import './employees-add-form.css'
 import {Component} from "react";
+// import './employees-add-form.css'
+import './employees-add-form.scss'
 
 class EmployeesAddForm extends Component {
     constructor(props) {
@@ -9,7 +10,11 @@ class EmployeesAddForm extends Component {
             salary: ''
         }
     }
-
+    // Можно и так
+    // state = {
+    //     name: '',
+    //     salary: ''
+    // }
     onValueChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
